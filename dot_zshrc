@@ -1,0 +1,45 @@
+# ~/.zshrc
+
+# 1. PATH per binari locali e script utente
+export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+
+# 2. Carica l'ambiente Homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# 3. Completamento nativo Zsh
+autoload -U compinit
+compinit
+
+# Permette il completamento con TAB anche a metà parola
+setopt COMPLETE_IN_WORD
+
+# 4. Inizializzazione Strumenti
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
+# 5. Plugin Zsh (Autosuggestions & Syntax Highlighting)
+if [ -n "$HOMEBREW_PREFIX" ]; then
+    if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+        source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    fi
+
+    # NOTA: syntax-highlighting deve essere sempre caricato per ultimo
+    if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+        source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    fi
+fi
+
+if [ -n "$CONTAINER_ID" ]; then
+    # ROBA ESCLUSIVA DISTROBOX
+    alias nautilus="distrobox-host-exec nautilus"
+fi
+
+
+alias ls="eza --icons --git"
+alias cd="z"
+alias whereami="pwd"
+alias cl="clear"
+
+
+# Added by Antigravity CLI installer
+export PATH="/var/home/v/.local/bin:$PATH"

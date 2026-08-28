@@ -1,0 +1,115 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    "agent_ui_font_size": 16.0,
+    "cursor_shape": "bar",
+    "reduce_motion": "off",
+    "buffer_line_height": "comfortable",
+    "buffer_font_weight": 500.0,
+    "title_bar": {
+        "show_branch_status_icon": false,
+    },
+    "search": {
+        "button": false,
+    },
+    "diagnostics": {
+        "button": true,
+    },
+    "status_bar": {
+        "show_active_file": false,
+    },
+    "semantic_tokens": "off",
+    "go_to_definition_fallback": "find_all_references",
+    "languages": {
+        "Python": {
+            "document_folding_ranges": "off",
+            "completions": {
+                "lsp": true,
+            },
+            "document_symbols": "off",
+            "linked_edits": true,
+            "enable_language_server": true,
+            "show_completion_documentation": true,
+            "inlay_hints": {
+                "enabled": true,
+                "show_parameter_hints": true,
+                "show_other_hints": false,
+            },
+            "prettier": {
+                "allowed": false,
+            },
+        },
+    },
+    "proxy": "",
+    "lsp": {
+        "basedpyright": {
+            "settings": {
+                "python": {
+                    "pythonPath": ".venv/bin/python",
+                },
+            },
+        },
+    },
+    "which_key": {
+        "delay_ms": 250,
+        "enabled": true,
+    },
+    "cli_default_open_behavior": "existing_window",
+    "ui_font_family": ".ZedSans",
+    "buffer_font_family": "CommitMonoGyratina",
+    "tabs": {
+        "show_diagnostics": "off",
+        "close_position": "right",
+        "file_icons": true,
+        "git_status": false,
+    },
+    "tab_bar": {
+        "show_pinned_tabs_in_separate_row": false,
+        "show_tab_bar_buttons": true,
+        "show_nav_history_buttons": false,
+        "show": true,
+    },
+    "tab_size": 4,
+    "terminal": {
+        "working_directory": "current_project_directory",
+        "font_weight": 450.0,
+        "button": true,
+        "detect_venv": "off",
+        "dock": "bottom",
+        "cursor_shape": "bar",
+        "blinking": "on",
+        "shell": "system",
+    },
+    "disable_ai": true,
+    "edit_predictions": {
+        "allow_data_collection": "no",
+    },
+    "vim_mode": false,
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+        "anthropic_retention": false,
+    },
+    "session": {
+        "trust_all_worktrees": true,
+    },
+    "icon_theme": {
+        "mode": "system",
+        "light": "Warm Charmed Icons",
+        "dark": "Warm Charmed Icons",
+    },
+    "base_keymap": "VSCode",
+    "ui_font_size": 16.0,
+    "buffer_font_size": 16.0,
+    "theme": {
+        "mode": "system",
+        "light": "One Dark Pro Glass",
+        "dark": "One Dark Pro Glass"
+    },
+}
