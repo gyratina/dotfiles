@@ -1,0 +1,11 @@
+{
+  "colorScheme": "dark",
+  "enableTelemetry": false,
+  "showFeedbackSurvey": false,
+  "showTips": false,
+  "trustedWorkspaces": [
+    "/var/home/v/Coding/Python/project-OGM",
+    "/var/home/v/Coding/Just/morros",
+    "/var/home/v/Coding/Just/ValkyriaOS"
+  ]
+}
