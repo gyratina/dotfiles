@@ -40,6 +40,18 @@ alias cd="z"
 alias whereami="pwd"
 alias cl="clear"
 
-
 # Added by Antigravity CLI installer
 export PATH="/var/home/v/.local/bin:$PATH"
+
+### KEYBINDS
+# Movimento tra parole: Alt + Freccia Destra / Sinistra
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
+# Movimento tra parole: Ctrl + Freccia Destra / Sinistra
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# Varianti per terminali con sequenze legacy (xterm/rxvt)
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
