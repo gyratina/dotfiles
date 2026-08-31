@@ -18,15 +18,23 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # 5. Plugin Zsh (Autosuggestions & Syntax Highlighting)
-if [ -n "$HOMEBREW_PREFIX" ]; then
-    if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-        source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-    fi
+# Supporta sia i percorsi di sistema (/usr/share) sia Homebrew
+if [ -f "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+    source "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+elif [ -n "$HOMEBREW_PREFIX" ] && [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+    source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
 
-    # NOTA: syntax-highlighting deve essere sempre caricato per ultimo
-    if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-        source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-    fi
+# NOTA: syntax-highlighting deve essere sempre caricato per ultimo
+if [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+elif [ -n "$HOMEBREW_PREFIX" ] && [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+    source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+# 6. Mise (Polyglot dev tool & runtime version manager)
+if command -v mise >/dev/null 2>&1; then
+    eval "$(mise activate zsh)"
 fi
 
 if [ -n "$CONTAINER_ID" ]; then
