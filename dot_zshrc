@@ -39,7 +39,7 @@ alias ls="eza --icons --git"
 alias cd="z"
 alias whereami="pwd"
 alias cl="clear"
-#alias zed="zeditor"
+alias zed="zeditor"
 
 # Added by Antigravity CLI installer
 export PATH="/var/home/v/.local/bin:$PATH"
